@@ -1,0 +1,112 @@
+/* Reset some default styles and set a base font size */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f6f6f6;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background-color: peachpuff;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* Sections styling */
+section {
+    padding: 40px;
+    background-color: #fff;
+    margin: 80px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Service boxes styling */
+.service {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.service img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.service h3 {
+    font-size: 20px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+/* Contact info styling */
+address {
+    margin-top: 10px;
+}
+
+address a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+    
+    nav li {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    section {
+        padding: 20px;
+    }
+}
