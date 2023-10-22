@@ -13,6 +13,7 @@ header {
     width: 100%;
     min-height: 100vh;
     /* background-image: url(images/background.png); */
+    background-color: peachpuff;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -29,6 +30,7 @@ nav {
 
 header h1 {
     font-size: 36px;
+    padding-left: 50px;
 }
 
 nav ul {
