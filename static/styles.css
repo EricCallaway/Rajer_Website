@@ -91,6 +91,11 @@ section p {
     object-fit: cover;
 }
 
+/* Main Styling */
+main {
+    background-color: black;
+}
+
 /* Footer styling */
 footer {
     text-align: center;
