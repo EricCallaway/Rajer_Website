@@ -8,6 +8,10 @@
     font-family: 'Yeseva One', cursive;
 }
 
+body {
+    background-color: black;
+}
+
 /* Header styling */
 header {
     width: 100%;
@@ -195,7 +199,20 @@ address a {
     animation-name: fade;
     animation-duration: 1.5s;
   }
+
+  .hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+  }
   
+  .show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+
   @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
@@ -215,4 +232,10 @@ address a {
     section {
         padding: 20px;
     }
+
+@media(prefers-reduced-motion){
+    .hidden {
+        transition: none;
+    }
+}
 }
