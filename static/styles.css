@@ -10,17 +10,18 @@
 
 body {
     background-color: black;
+    margin: 0;
 }
 
 /* Header styling */
 header {
     width: 100%;
     min-height: 100vh;
-    /* background-image: url(images/background.png); */
-    background-color: peachpuff;
+    background-color: transparent;
     background-size: cover;
     background-position: center;
     position: relative;
+    overflow: hidden;
     padding-top: 2%;
 }
 
@@ -30,11 +31,26 @@ nav {
     top: 0;
     padding-top: 2%;
     font-size: 24px;
+    z-index: 2; /* Ensure the navbar is above the images */
 }
 
-header h1 {
+header h1.logo {
+    position: absolute;
+    top: 20px;
+    left: 200px;
+    transform: translate(-50%, -50%);
     font-size: 36px;
-    padding-left: 50px;
+    color: #fff; /* Set the text color */
+    z-index: 2; /* Ensure the logo is above the images */
+}
+
+header h1.logo:nth-child(2) {
+  position: absolute;
+  top: 60px; /* Adjust the top distance to create space between the two h1 tags */
+  left: 200px; /* Adjust the left distance as needed */
+  font-size: 36px;
+  color: #fff; /* Set text color */
+  z-index: 2; /* Ensure the logo is above the images */
 }
 
 nav ul {
@@ -48,9 +64,104 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: black;
+    color: #fff;
     font-weight: bold;
     right: 0;
+}
+
+/* Slideshow container and slides */
+.slideshow-container {
+  top:0px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: auto;
+  overflow: hidden;
+}
+
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text {
+  position: absolute;
+  color: #fff; /* Set text color */
+}
+
+.numbertext {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  header h1.logo {
+      font-size: 28px;
+  }
+
+  nav li {
+      display: block;
+      margin-bottom: 10px;
+  }
 }
 
 /* Sections styling */
@@ -90,11 +201,6 @@ section p {
     margin-top: 10px;
 }
 
-.slideshow-container img {
-    height: 685px;
-    object-fit: cover;
-}
-
 /* Main Styling */
 main {
     background-color: black;
@@ -118,45 +224,6 @@ address a {
     color: #333;
     text-decoration: none;
 }
-
-/* Slideshow container */
-.slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-  }
-  
-  /* Hide the images by default */
-  .mySlides {
-    display: none;
-  }
-  
-  /* Next & previous buttons */
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-  
-  /* Position the "next button" to the right */
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
   
   /* Caption text */
   .text {
@@ -177,28 +244,6 @@ address a {
     position: absolute;
     top: 0;
   }
-  
-  /* The dots/bullets/indicators */
-  .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-  
-  .active, .dot:hover {
-    background-color: #717171;
-  }
-  
-  /* Fading animation */
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
 
   .hidden {
     opacity: 0;
@@ -212,22 +257,6 @@ address a {
     filter: blur(0);
     transform: translateX(0);
   }
-
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
-
-/* Media Queries for Responsiveness */
-@media screen and (max-width: 768px) {
-    header h1 {
-        font-size: 28px;
-    }
-    
-    nav li {
-        display: block;
-        margin-bottom: 10px;
-    }
     
     section {
         padding: 20px;
@@ -237,5 +266,4 @@ address a {
     .hidden {
         transition: none;
     }
-}
 }
